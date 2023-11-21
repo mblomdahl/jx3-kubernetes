@@ -43,6 +43,8 @@ jobs:
     - name: Test
       run: |
         echo "event name: ${{ github.event.event_name }}"
+        echo "--build-arg GITHUB_SHA=\"$GITHUB_SHA\""
+        echo "--build-arg GITHUB_REF=\"$GITHUB_REF\""
         exit 1
 
     # Alternative option - authentication via credentials json
